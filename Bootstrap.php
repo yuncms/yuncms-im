@@ -29,7 +29,7 @@ class Bootstrap implements BootstrapInterface
                 'action' => ImJob::ACTION_ACCOUNT_CREATE,
                 'params' => [
                     'Identifier' => ShortURL::encode($event->sender->id),
-                    'Nick' => $event->sender->username,
+                    'Nick' => $event->sender->nickname,
                     //'FaceUrl'
                 ],
             ]));
