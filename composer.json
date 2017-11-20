@@ -13,6 +13,7 @@
     "php": ">=5.4.0",
     "yiisoft/yii2": "~2.0.13",
     "yiisoft/yii2-queue": "~2.0.1",
+    "xutl/yii2-tim": "~1.0.0",
     "yuncms/yuncms-user": "~2.0.0"
   },
   "require-dev": {
