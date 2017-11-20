@@ -33,11 +33,12 @@
         "sourceLanguage": "en-US",
         "basePath": "@yuncms/im/messages"
       },
-      "cron": {
-      },
       "migrationNamespace": "yuncms\\im\\migrations",
       "backend": {
         "class": "yuncms\\im\\backend\\Module"
+      },
+      "frontend": {
+        "class": "yuncms\\im\\frontend\\Module"
       }
     },
     "bootstrap": "yuncms\\im\\Bootstrap",
