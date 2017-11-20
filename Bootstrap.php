@@ -24,6 +24,7 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
+        //监听用户注册事件，自动激活IM
         Event::on(User::className(), User::AFTER_CREATE, function ($event) {
             Yii::$app->queue->push(new ImJob([
                 'action' => ImJob::ACTION_ACCOUNT_CREATE,
