@@ -35,5 +35,17 @@ class Bootstrap implements BootstrapInterface
                 ],
             ]));
         });
+
+        //监听用户注册事件，自动激活IM
+        Event::on(User::className(), User::AFTER_REGISTER, function ($event) {
+            Yii::$app->queue->push(new ImJob([
+                'action' => ImJob::ACTION_ACCOUNT_CREATE,
+                'params' => [
+                    'Identifier' => ShortURL::encode($event->sender->id),
+                    'Nick' => $event->sender->nickname,
+                    //'FaceUrl'
+                ],
+            ]));
+        });
     }
 }
