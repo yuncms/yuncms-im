@@ -25,12 +25,12 @@ class Bootstrap implements BootstrapInterface
     public function bootstrap($app)
     {
         //监听用户注册事件，自动激活IM
-        Event::on(User::className(), User::AFTER_CREATE, function ($event) {
+        Event::on(User::class, User::AFTER_CREATE, function ($event) {
             Yii::$app->im->getAccount()->import($event->sender->id, $event->sender->nickname);
         });
 
         //监听用户注册事件，自动激活IM
-        Event::on(User::className(), User::AFTER_REGISTER, function ($event) {
+        Event::on(User::class, User::AFTER_REGISTER, function ($event) {
             Yii::$app->im->getAccount()->import($event->sender->id, $event->sender->nickname);
         });
     }
